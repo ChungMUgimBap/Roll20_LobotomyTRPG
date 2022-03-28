@@ -1,0 +1,433 @@
+    *{
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Song Myung', serif;
+        border-style: none;
+        /* outline-style: none; */
+    }
+    @font-face {
+        font-family: 'HeirofLightRegular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'HeirofLightBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+   
+    input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;  margin: 0;}
+    input[type="number"]{border-style: none; padding:none; margin: none; vertical-align: middle; background-color: #f3f3f3;}
+    input[type="text"]{border-style: none; outline-style: none; padding:none; margin: none; vertical-align: middle; background-color: #f3f3f3;}
+    textarea{border-style: none; outline-style: none; padding:none; margin: none; vertical-align: middle; background-color: #f3f3f3;}
+    select{border-style: none; outline-style: none; padding:none; margin: none; vertical-align: top; background-color: #f3f3f3;}
+    textarea::-webkit-outer-spin-button,textarea::-webkit-inner-spin-button {-webkit-appearance: none;  margin: 0;}
+    table{border-collapse:collapse; border-spacing:0;}
+    h3,h4{text-align: center; vertical-align: middle; color: #fee2b0; font-weight: bolder;}
+    select {-webkit-appearance:none; -moz-appearance:none; appearance:none}
+        .sheet_bg{
+            width: 960px;
+            background-size: contain;
+            height: 2100px;
+            overflow: hidden;
+            background-position-y: top;
+            background-repeat: repeat-y;
+            background-color: black;
+            text-align: center;
+            /* background-image:url(https://i.imgur.com/ST78T3D.jpg); */
+            }
+            
+        /* 주사위 */
+        button[type=roll].NDice{
+            color: #ff7b00;
+            background-color: #ff7b00;
+            font-weight: bolder;
+            text-align: center;
+            width: 18px;
+            height: 18px;
+            margin: 0.0;
+            padding: 0.0em;
+            border: 1px solid #000000;
+            border-radius: 5px;
+          }
+        button[type=roll].BDice{
+            color: #7e0000;
+            background-color: #7e0000;
+            font-weight: bolder;
+            text-align: center;
+            width: 18px;
+            height: 18px;
+            margin: 0.0;
+            padding: 0.0em;
+            border: 1px solid #000000;
+            border-radius: 5px;
+          }
+        .player{text-align: right; height: 18px; margin-top: 15px;}
+        .player_name{color: #fee2b0; font-weight: bolder;}
+        .Player_Name{color: #fee2b0; font-weight: bolder; font-family: 'East Sea Dokdo', cursive;}
+          /* 상단 */
+          .Top{margin-top: 30px; width: 960px; height: 400px; text-align: center;}
+          .Top_body{width: 300px; height: 400px; float: left; padding-left: 10px; padding-right: 10px;}
+        /* 프로필 */
+        .profile{font-size: 15px; width: 300px; height: 165px;}
+        .profiletitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+            color: #fee2b0;
+        }
+        .profile1{
+            width: 300px;
+            height: 115px;
+            padding-top: 10px; 
+            padding-bottom: 10px; 
+            text-align: center;
+            background-color: #d3d3d3; border-radius: 3px;
+        } 
+
+        .조사대상{margin-left: 19.5px;}
+        .조사대상값{margin-left: 10px; width: 165px; text-align: center;}
+        .소속및직업{margin-left: 4px;}  
+        .소속및직업값{width: 165px;text-align: center;}
+        .나이{margin-left: 4px;}
+        .나이값{ width: 80px;text-align: center;}
+        .출신지{margin-left: 2px;}
+        .출신지값{margin-left: 3px; width: 80px;text-align: center;}
+        .키{margin-left: 11.5px;}
+        .키값{margin-left: 7.5px; width: 80px;text-align: center;}
+        .거주지{margin-left: 2px;}
+        .거주지값{margin-left: 3px; width: 80px;text-align: center;}
+
+        /* 에고 */
+        .Ego{width: 300px; height: 230px; text-align: center;}
+        .Ego_1{width: 300px;  height: 180px;  text-align: center; 
+            padding-top: 10px; padding-bottom: 10px; 
+            background-color: #d3d3d3; border-radius: 3px;}
+        .Egotitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        /* 스테이터스 */
+        .status_title{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .status{
+            width: 300px;
+            height: 150px;
+            font-size: 15px;
+            }
+        .status_body{ width: 300px; height: 100px; 
+            padding-top: 10px; padding-bottom: 10px;}
+        .Cstat{color: black; background-color: #c5c5c5;}
+        .Mstat{color: black; background-color: #5e5e5e; }
+        .status_up{width: 300px; height: 25px;}
+        .status_barup{width: 300px; height: 25px;}
+        .status_down{width: 300px; height: 25px;}
+        .status_bardown{width: 300px; height: 25px;}
+        /* 로고 */
+        .logo{width: 300px; height: 150px; padding-top: 2.5px; padding-bottom: 2.5px; background-color: black;}
+        /* 등급 */
+        .Cha-Grade{
+            width: 300px;
+            height: 95px;
+            text-align: center;
+        }
+        .Character-grade{
+            width: 300px;
+            height: 45px; 
+            text-align: center; 
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #d3d3d3; border-radius: 3px;
+        }
+        .Cha-Gradetitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        /* 능력치 */
+        #ability{width: 300px; height: 400px; text-align: center;}
+        .ability_title{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .ability_body{width: 300px; height: 370px;}
+        /* 무기및의상 */
+        .weapon-armor{width: 960px; height: 400px;}
+        .type-image{width: 100px; height: auto; text-align: center;}
+        input[type="checkbox"]{ width: 21px;  height: 21px; text-align: center; vertical-align: middle;}
+        .type_image{float: left; width: 100px; text-align: center;}
+        .combatDice{width: 300px; height: 30px; text-align: center;}
+        /* 무기 */
+        .weapon{ width: 640px;  height: 400px;  float: left;}
+        .weapontitle{
+            display: table-cell;
+            width: 640px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle; }
+        .weapon_Body{
+            width: 300px;
+            height: 370px;
+            padding-left: 10px;
+            padding-right: 10px;
+            float: left; 
+        }
+        .weapon_body{
+            width: 300px;
+            height: 350px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #d3d3d3; border-radius: 3px;
+        }
+        .weaponhead{width: 60px; text-align: center; font-size: 15px;}
+        .weaponbody{width: 240px; text-align: center;}
+        .weapon-typevalue{width: 300px; height: 30px; vertical-align: middle;}
+        .weapon_type_check{
+            float: left; 
+            width: 100px; 
+            vertical-align: middle;
+            text-align: center;}
+        .weapon-imagebody{width: 300px; height: 100px; text-align: center;}
+        .weapon_distance{width: 45px; height: 25px;}
+        /* 의상 */
+        .armor{ width: 300px; height: 400px; float: left; margin-left: 10px; margin-right: 10px;}
+        .armortitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;}
+        .armor-Body{width: 300px; height: 350px; 
+            padding-top: 10px; padding-bottom: 10px;
+            background-color: #d3d3d3; border-radius: 3px;
+        }
+        .armor-grade{text-align: center;}
+        .armor-immunevalue{width: 45px; text-align: center;}
+        .armorhead{width: 60px; text-align: center; font-size: 15px;}
+        .armorbody{width: 240px; text-align: center; font-size: 15px;}
+        .armor-imagebody{text-align: center; width: 300px; height: 100px;}
+        .armor-immunebody{text-align: center; width: 300px; height: 30px;}
+
+        .abilitybody{width: 300px; text-align: center;}
+        /* 기술 전체 */
+        .skill_all{width: 960px; height: 360px; }
+        .SkillD{margin-top: -10px;}
+        /* 에고 기술 */
+        .EGO_skill{width: 300px; height: 360px; float: left; margin-left: 10px; margin-right: 10px;}
+        .EGO_skilltitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .EGO_skill1{width: 300px; height: 145px;  padding-top: 10px; padding-bottom: 10px;}
+        .EGO_skill2{width: 300px; height: 145px;  padding-top: 10px; padding-bottom: 10px;}
+        .EGOhead{width: 60px; height: 30px; text-align: center; font-size: 15px;}
+        .EGObody{width: 240px; height: 30px; text-align: center; font-size: 15px;}
+        .EGO_effect_body{width: 240px; height: 45px; text-align: center; font-size: 15px;}
+        .skill_type{width: 45px; text-align: center; font-size: 15px;}
+        .ego_skill_body{width: 300px; height: 330px; background-color: #d3d3d3; border-radius: 3px;}
+        /* 기술 */
+        .skill{width: 640px; height: 320px; float: left;}
+        .skill_Body{margin-left: 10px; margin-right: 10px; float: left;
+            background-color: #d3d3d3; border-radius: 3px;}
+        .skilltitle{
+            display: table-cell;
+            width: 640px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .skill1{width: 300px; height: 145px; padding-top: 10px; padding-bottom: 10px;}
+        .skill2{width: 300px; height: 145px; padding-top: 10px; padding-bottom: 10px;}
+        .skill3{width: 300px; height: 145px; padding-top: 10px; padding-bottom: 10px;}
+        .skill4{width: 300px; height: 145px; padding-top: 10px; padding-bottom: 10px;}
+        .skillhead{width: 60px; height: 30px; text-align: center; font-size: 15px;}
+        .skillhead_a{height: 30px; margin-left: 12px; text-align: left; font-size: 15px;}
+        .skillhead_b{height: 30px; margin-left: 20px; margin-right: 20px; font-size: 15px;}
+        .skillbody{width: 240px; height: 30px; text-align: center; font-size: 15px;}
+        .skill_effect_body{width: 240px; height: 45px; text-align: center; font-size: 15px;}
+        .skill-grade_light{width: 300px; height: 30px; font-size: 15px; text-align: left;}
+        .skill_grade{font-size: 15px; text-align: center; text-align: left; margin-left: 13px;}
+        .skill_grade_value{font-size: 15px; text-align: center; margin-left: 4px;}
+        .skill_light{font-size: 15px; text-align: center; margin-left: 5px;}
+        .skill_light_value{font-size: 15px; text-align: center; margin-left: 5px;}
+        /* 기타 */
+        .etc{width: 960px; height: 420px; float: left;}
+        /* 도구 */
+        .tooltitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .tool{width: 300px; height: 420px; font-size: 15px; float: left;
+            margin-left: 10px; margin-right: 10px;
+        }
+        .tool_Body{ width: 300px; height: 390px;
+            background-color: #d3d3d3; border-radius: 3px;}
+        .tool1{width: 300px; height: 160px; 
+            padding-top: 10px; padding-bottom: 10px;
+        }
+        .tool2{width: 300px; height: 160px; 
+            padding-top: 10px; padding-bottom: 10px; margin-top: 20px;
+        }
+        .tool_type{width: 300px; height: 40px;}
+        .C_tool_time{width:100px; height: 20px; text-align: center;}
+        .M_tool_time{width:100px; height: 20px; text-align: center;}
+        .tool_line{width: 100px; height: 40px; text-align: center; float: left; vertical-align: middle;}
+        .tool_line_cell{width:100px; height: 20px; text-align: center;}
+        .tool-name{width: 300px; height: 30px; text-align: center;}
+        .tool-grade{width: 300px; height: 30px; text-align: center;}
+        .tool_effect{width: 300px; height: 60px; text-align: center; vertical-align: middle; padding-top: 5px;}
+        #tool1_effect{width: 300px; height: 45px; resize: none; vertical-align: middle;}
+        #tool2_effect{width: 300px; height: 45px; resize: none; vertical-align: middle;}
+        #tool_time{text-align: center;}
+        /* 시술 및 특수장비 */
+        .procedure_spe-tool{width: 300px; height: 420px; float: left; 
+            margin-left: 10px; margin-right: 10px;}
+        /* 시술 */
+        .proceduretitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .procedure{width: 300px; height: 200px; font-size: 15px;}
+        .procedure_Body{width: 300px; height: 150px; font-size: 15px; 
+            padding-top: 10px; padding-bottom: 10px;
+            background-color: #d3d3d3; border-radius: 3px;
+        }
+        .procedure-name{width: 300px; height: 30px; text-align: center;}
+        .procedure-grade{width: 300px; height: 30px; text-align: center;}
+        .procedure-type{width: 300px; height: 30px; text-align: center;}
+        .procedure_effect{width: 300px; height: 60px; text-align: center; vertical-align: middle; padding-top: 5px;}
+        #procedure-type{width: 240px;}
+        /* 특수장비 */
+        .Special_tooltitle{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .Special_tool{width: 300px; height: 220px; font-size: 15px;}
+        .Special_tool_Body{width: 300px; height: 170px; font-size: 15px; 
+            padding-top: 10px; padding-bottom: 10px;
+            background-color: #d3d3d3; border-radius: 3px;
+        }
+        .Special_tool-name{width: 300px; height: 30px; text-align: center;}
+        .Special_tool-grade{width: 300px; height: 30px; text-align: center;}
+        .Special_tool_type{width: 300px; height: 50px; text-align: center;}
+        .Special_tool_effect{width: 300px; height: 60px; text-align: center; vertical-align: middle; padding-top: 5px;}
+        .Special_tool_line{width: 100px; height: 40px; text-align: center; float: left; vertical-align: middle;}
+        .Special_tool_line_cell{width:100px; height: 20px; text-align: center;}
+        #Special_range{width: 100px;}
+        #Special_dangerous{width: 100px;}
+        #Special_last{width: 100px;}
+
+        /* 플레이 */
+        .Playing{width: 300px; height: 420px; float: left; 
+            margin-left: 10px; margin-right: 10px;}
+        /* 성장치 */
+        .level_all_title{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .level_all{width: 300px; height: 135px; font-size: 15px; text-align: center;}
+        .level_body{width: 300px; height: 85px; font-size: 15px; text-align: center; 
+            padding-top: 10px; padding-bottom: 10px;
+            background-color: #d3d3d3; border-radius: 3px;
+        }
+        .EXP_bar{width: 300px; height: 40px;}
+        .level_bar{width: 300px; height: 40px; text-align: left; margin-left: 15px; margin-top: 5px;}
+        #level_value{margin-left: 8px;}
+
+
+        /* 상태이상 */
+        .status_effect_title{
+            display: table-cell;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .status_effect{width: 300px;height: 285px;}
+        .status_effect_body{width: 300px; height: 235px; text-align: center; 
+            padding-top: 10px; padding-bottom: 10px;
+            background-color: #d3d3d3; border-radius: 3px;
+            
+           } 
+        .status_effect_line{width:150px; height: 15px; text-align: center;}
+        .status_effect_sort{width:100px; height: 15px; text-align: center;}
+        .status_effect_vlaue{width:50px; height: 15px; text-align:center;}
+
+        /* 프로필2 */
+        .profile2{width: 960px; height: 300px; text-align: center;}
+        .profile2_title{
+            display: table-cell;
+            width: 960px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .profile2_Body{width: 940px; height: 250px; 
+            margin-top: 10px; margin-bottom: 10px;
+            margin-left: 10px; margin-right: 10px;
+            text-align: center;
+            background-color: #d3d3d3; border-radius: 3px;
+        }
+        .profile2_body1{width: 300px; height: 250px; 
+            margin-right: 10px;
+            float: left; 
+        }
+        .profile2_body2{width: 300px; height: 250px; 
+            margin-left: 10px; margin-right: 10px;
+            float: left; 
+        }
+        .profile2_body3{width: 300px; height: 250px; 
+            margin-left: 10px;
+            float: left; 
+        }
+
+        .sheet-template_Body{width: 240px; height: 360px; 
+            background-image: url(https://i.imgur.com/TjGTQ7o.png); background-size: 240px 360px; overflow: hidden;}
+        .sheet-container{width: 150px; height: 250px; margin-left: 45px; margin-top: 55px;}
+        .sheet-template_type{width: 150px; height: 20px; color: #fee2b0; text-align: center; padding-top: 10px;} 
+        .sheet-template_name{width: 150px; height: 20px; color: #fee2b0; text-align: center; font-family: 'HeirofLightBold';} 
+        .sheet-template_dice_type{width: 150px; height: 20px; color: #fee2b0; text-align: center;} 
+        .sheet-template_dice{width: 150px; height: 60px; color: #000000; text-align: center;} 
+        .sheet-template_effect{width: 150px; height: 60px; color: #fee2b0; text-align: center;} 
+
+
+     
+
+
+
+
