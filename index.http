@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Myeongjo&family=Song+Myung&family=Stylish&family=Yeon+Sung&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="ProjectMoon.css">
+</head>
+
+<body>
+    <div class="sheet_bg">
+        <h2 style="text-align: center; vertical-align: middle; margin-top: 30px; color: #fee2b0; font-weight: bolder;">
+            인물 조사 및 전투 역량 보고서</h2>
+        <!-- 플레이어 -->
+        <div class="player">
+            <span class="player_name">보고서 작성자</span>
+            <span><input type="text" placeholder="플레이어 이름" id="Player_Name" name="attr_player"
+                    style="background-color: black; color: #fee2b0; width: 100px; height: 30px; font-size: 21px;
+                margin-top: -5px; margin-left: 10px; margin-right: 15px; text-align: left; font-family: 'Yeon Sung', cursive;"></span>
+        </div>
+        <!-- 상단 -->
+        <div class="Top">
+            <!-- 프로필 에고 -->
+            <div class="Top_body" id="profile_ego">
+                <!-- 프로필1 -->
+                <div class="profile">
+                    <div class="profiletitle">
+                        <h4>프로필</h4>
+                    </div>
+                    <div class="profile1">
+                        <div class="조사대상">조사대상 <input class="조사대상값" type="text" name="attr_character_name"></div>
+                        <div class="소속및직업">소속 및 직업 <input class="소속및직업값" type="text" name="attr_career"></div>
+                        <div class="나이">나이 <input class="나이값" type="text" name="attr_age"></span>
+                            <span class="출신지">출신지 <input class="출신지값" type="text" name="attr_home">
+                        </div>
+                        <div class="키">키 <input class="키값" type="text" name="attr_height"></span>
+                            <span class="거주지">거주지 <input class="거주지값" type="text" name="attr_residence">
+                        </div>
+                    </div>
+                </div>
+                <!-- 에고 -->
+                <div class="Ego" style="text-align: center;">
+                    <div class="Egotitle">
+                        <h4>E.G.O</h4>
+                    </div>
+                    <div class="Ego_1">
+                        <table border-collapse: collapse; border-spacing:0; style="width: 300px;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="Ego-name" style="text-align: center; width: 300px;">명칭</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="Ego-name-val" style="text-align: center;">
+                                        <input style="width: 280px; font-size: 15px; text-align: center;" type="text"
+                                            name="attr_Ego-name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="Ego-virtue" style="text-align: center; width: 300px;">발현한 미덕
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="Ego-virtue-val"
+                                        style="text-align: center; vertical-align: middle;">
+                                        <textarea
+                                            style="font-size: 15px; text-align:center; resize: none; width: 270px; height: 45px;"
+                                            name="attr_Ego-virtue"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" style="text-align: center; ">발동 조건</td>
+                                    <td colspan="1" style="text-align: center; ">발동 유형</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" style="text-align: center; width: 150px;">
+                                        <select name="attr_Ego-way" style="text-align: center; width: 150px;">
+                                            <option value="없음"> </option>
+                                            <option value="상시 발현">상시 발현</option>
+                                            <option value="체력 50% 이하">체력 50% 이하</option>
+                                            <option value="흐트러짐">흐트러짐</option>
+                                            <option value="적 처치">적 처치</option>
+                                            <option value="아군사망">아군사망</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="1" style="text-align: center; width: 150px;">
+                                        <select name="attr_Ego-type" style="text-align: center; width: 150px;">
+                                            <option value=" "></option>
+                                            <option value="무기">무기</option>
+                                            <option value="의상">의상</option>
+                                            <option value="도구">도구</option>
+                                            <option value="특수장비">특수장비</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 스테이터스 로고 등급  -->
+            <div class="Top_body" id="status_logo_grade">
+                <!-- 스테이터스 -->
+                <div class="status">
+                    <div class="status_title">
+                        <h4>Stat</h4>
+                    </div>
+                    <div class="status_body">
+                        <table>
+                            <tbody>
+                                <tr class="status_up">
+                                    <td colspan="2"
+                                        style="text-align: center; background-color: #ff0000; font-weight: bold;">체력
+                                    </td>
+                                    <td colspan="2"
+                                        style="text-align: center; background-color: #f1c232; font-weight: bold;">흐트러짐
+                                    </td>
+                                </tr>
+                                <tr class="status_barup">
+                                    <td><input class="Cstat" type="number" style="width:75px; text-align: center;"
+                                            name="attr_C-HP" placeholder="현재"></td>
+                                    <td><input class="Mstat" type="number"
+                                            style="width:75px; text-align: center; background-color: #5e5e5e; border-style: none;"
+                                            name="attr_MaxHP" value="(24+(@{instict}*6)+(@{Character_grade}*6))"
+                                            disabled="true">
+                                    </td>
+                                    <td><input class="Cstat" type="number" style="width:75px; text-align: center;"
+                                            name="attr_C-Stag" placeholder="현재"></td>
+                                    <td><input class="Mstat" type="number"
+                                            style="width:75px; text-align: center; background-color: #5e5e5e; border-style: none;"
+                                            name="attr_MaxStag" value="(20+(@{attraction}*4)+(@{Character_grade}*4))"
+                                            disabled="true">
+                                    </td>
+                                </tr>
+                                <tr class="status_down">
+                                    <td colspan="2"
+                                        style="text-align: center; background-color: #3c78d8; font-weight: bold;">정신력
+                                    </td>
+                                    <td colspan="2"
+                                        style="text-align: center; background-color: #fff3c6; font-weight: bold;">빛</td>
+                                </tr>
+                                <tr class="status_bardown">
+                                    <td><input class="Cstat" type="number" style="width:75px; text-align: center;"
+                                            name="attr_C-SP" placeholder="현재"></td>
+                                    <td><input class="Mstat" type="number"
+                                            style="width:75px; text-align: center; background-color: #5e5e5e; border-style: none;"
+                                            name="attr_MaxSP" value="((@{prudence}*3)+15)" disabled="true"></td>
+                                    <td><input class="Cstat" type="number" style="width:75px; text-align: center;"
+                                            name="attr_C-Light" placeholder="현재"></td>
+                                    <td><input class="Mstat" type="number"
+                                            style="width:75px; text-align: center; background-color: #5e5e5e; border-style: none;"
+                                            name="attr_MaxLight" value="(@{Character_grade}+3)" disabled="true"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="https://i.imgur.com/TEwiu2v.png" alt="로고" width="300px" height="150px">
+                </div>
+                <!-- 등급 -->
+                <div class="Cha-Grade">
+                    <div class="Cha-Gradetitle">
+                        <h4>등급</h4>
+                    </div>
+                    <div style="text-align: centers;" class="Character-grade">
+                        <input style="width: 270px; height: 45px; text-align: center;" class="Character_grade"
+                            type="number" name="attr_Character_grade"
+                            value="floor((@{instict}+@{prudence}+@{justice}+@{attraction}+@{insight}+@{temperance})/(6))"
+                            disabled="true">
+                    </div>
+                </div>
+            </div>
+            <!-- 능력치 -->
+            <div class="Top_body" id="ability">
+                <div class="ability_title">
+                    <h4>능력치</h4>
+                </div>
+                <div class="ability_body">
+                    <table class="abilitybody" border-collapse: collapse; border-spacing:0;
+                        style="table-layout: fixed;">
+                        <tbody>
+                            <tr>
+                                <td
+                                    style="text-align: center;  background-color: #c0000c; height: 20px; font-weight: bold;">
+                                    본능
+                                </td>
+                                <td
+                                    style="text-align: center; background-color: #f1c232; height: 20px; font-weight: bold;">
+                                    지혜
+                                </td>
+                                <td
+                                    style="text-align: center; background-color: #08abce; height: 20px; font-weight: bold;">
+                                    정의
+                                </td>
+                            </tr>
+                            <tr>
+                                <td clospan style="text-align: center;">
+                                    <img src="https://i.imgur.com/DEJZcM1.png" alt="본능" width="100px" height="auto"
+                                        style="background-color: black;">
+                                </td>
+                                <td clospan style="text-align: center;">
+                                    <img src="https://i.imgur.com/1beu3ya.png" alt="지혜" width="100px" height="auto"
+                                        style="background-color: black;">
+                                </td>
+                                <td clospan style="text-align: center;">
+                                    <img src="https://i.imgur.com/2LfotRo.png" alt="정의" width="100px" height="auto"
+                                        style="background-color: black;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <input type="number"
+                                        style="margin-bottom: 1px; text-align: center; width: 57px; height: 18px; background-color: silver;"
+                                        name="attr_instict">
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <input type="number"
+                                        style="margin-bottom: 1px; text-align: center; width: 57px; height: 18px; background-color: silver;"
+                                        name="attr_prudence">
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <input type="number"
+                                        style="margin-bottom: 1px; text-align: center; width: 57px; height: 18px; background-color: silver;"
+                                        name="attr_justice">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="NDice"
+                                        value='&{template:Challenge}{{name=본능}}{{dice_value1=[[2d6+@{instict}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="BDice"
+                                        value='&{template:Challenge}{{name=본능}}{{dice_value1=[[2d6+@{instict}+@{hard}]]}}{{dice_value2=[[2d6+@{instict}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="NDice"
+                                        value='&{template:Challenge}{{name=지혜}}{{dice_value1=[[2d6+@{prudence}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="BDice"
+                                        value='&{template:Challenge}{{name=지혜}}{{dice_value1=[[2d6+@{prudence}+@{hard}]]}}{{dice_value2=[[2d6+@{prudence}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="NDice"
+                                        value='&{template:Challenge}{{name=정의}}{{dice_value1=[[2d6+@{justice}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="BDice"
+                                        value='&{template:Challenge}{{name=정의}}{{dice_value1=[[2d6+@{justice}+@{hard}]]}}{{dice_value2=[[2d6+@{justice}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style="text-align: center; background-color:#8e7cc3; height: 20px; font-weight: bold;">
+                                    매력
+                                </td>
+                                <td
+                                    style="text-align: center; background-color:#fff2cc; height: 20px; font-weight: bold;">
+                                    통찰
+                                </td>
+                                <td
+                                    style="text-align: center; background-color:#674ea7; height: 20px; font-weight: bold;">
+                                    절제
+                                </td>
+                            </tr>
+                            <tr>
+                                <td clospan style="text-align: center;">
+                                    <img src="https://i.imgur.com/z5BRr3L.png" alt="매력" width="100px" height="auto"
+                                        style="background-color: black;">
+                                </td>
+                                <td clospan style="text-align: center;">
+                                    <img src="https://i.imgur.com/fEla90x.png" alt="통찰" width="100px" height="auto"
+                                        style="background-color: black;">
+                                </td>
+                                <td clospan style="text-align: center;">
+                                    <img src="https://i.imgur.com/FmmwWDF.png" alt="절제" width="100px" height="auto"
+                                        style="background-color: black;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <input type="number"
+                                        style="margin-bottom: 1px; text-align: center; width: 57px; height: 18px; background-color: silver;"
+                                        name="attr_attraction">
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <input type="number"
+                                        style="margin-bottom: 1px; text-align: center; width: 57px; height: 18px; background-color: silver;"
+                                        name="attr_insight">
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <input type="number"
+                                        style="margin-bottom: 1px; text-align: center; width: 57px; height: 18px; background-color: silver;"
+                                        name="attr_temperance">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="NDice"
+                                        value='&{template:Challenge}{{name=매력}}{{dice_value1=[[2d6+@{attraction}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="BDice"
+                                        value='&{template:Challenge}{{name=매력}}{{dice_value1=[[2d6+@{attraction}+@{hard}]]}}{{dice_value2=[[2d6+@{attraction}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="NDice"
+                                        value='&{template:Challenge}{{name=통찰}}{{dice_value1=[[2d6+@{insight}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="BDice"
+                                        value='&{template:Challenge}{{name=통찰}}{{dice_value1=[[2d6+@{insight}+@{hard}]]}}{{dice_value2=[[2d6+@{insight}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                </td>
+                                <td style="text-align: center; height: 25px; background-color: #dadada;">
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="NDice"
+                                        value='&{template:Challenge}{{name=절제}}{{dice_value1=[[2d6+@{temperance}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                    <button type="roll" style="margin-bottom: 1.5px;" class="BDice"
+                                        value='&{template:Challenge}{{name=절제}}{{dice_value1=[[2d6+@{temperance}+@{hard}]]}}{{dice_value2=[[2d6+@{temperance}+@{hard}]]}}'
+                                        name='roll_ins_check'></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 30px; background-color: #dadada;">난이도</td>
+                                <td colspan="2" style="height: 30px; background-color: #dadada; text-align: center;">
+                                    <input type="number" name="attr_hard"
+                                        style="text-align: center; background-color: silver; width: 150px;">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- 무기 및 의상 -->
+        <div class="weapon-armor">
+            <!-- 무기 -->
+            <div class="weapon">
+                <div class="weapontitle">
+                    <h4>무기</h4>
+                </div>
+                <!-- 무기1 -->
+                <div class="weapon_Body" style="text-align: center;">
+                    <div class="weapon_body">
+                        <div class="weapon-name" style="height: 30px;">
+                            <span class="weaponhead">이름</span>
+                            <span id="weapon-name1" class="weaponbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_weapon-name1">
+                            </span>
+                        </div>
+                        <div class="weapon-grade" style="height: 30px;">
+                            <span class="weaponhead">등급</span>
+                            <span id="weapon-grade1" class="weaponbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_weapon-grade1">
+                            </span>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="weaponhead"><select name="attr_weapon_distance1" class="weapon_distance">
+                                    <option value="근거리">근거리</option>
+                                    <option value="원거리">원거리</option>
+                                </select></span>
+                            <span class="weaponbody">
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_weaponDice1-1"></span>
+                                <span style="width: 15px; text-align: center;">D</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_weaponDice1-2"></span>
+                                <span style="width: 15px; text-align: center;">+</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_weaponDice1-3"></span>
+                                <span><button type="roll" class="NDice"
+                                        value="&{template:Combat}{{type=@{weapon_distance1}}}{{dice_type=@{weapon1_Type}}}{{name=@{weapon-name1}}}{{dice_value1=[[@{weaponDice1-1}d@{weaponDice1-2}+@{weaponDice1-3}]]}}{{effect=@{weapon-effect1}}}"></button></span>
+                                <span><button type="roll" class="BDice"
+                                        value="&{template:Combat}{{type=@{weapon_distance1}}}{{dice_type=@{weapon1_Type}}}{{name=@{weapon-name1}}}{{dice_value1=[[@{weaponDice1-1}d@{weaponDice1-2}+@{weaponDice1-3}]]}}{{dice_value2=[[@{weaponDice1-1}d@{weaponDice1-2}+@{weaponDice1-3}]]}}{{effect=@{weapon-effect1}}}"></button></span>
+                            </span>
+                        </div>
+                        <div class="weapon-imagebody">
+                            <div class="type_image"><img class="type-image" src="https://i.imgur.com/CxMfMI8.png"
+                                    alt="참격">
+                            </div>
+                            <div class="type_image"><img class="type-image" src="https://i.imgur.com/7l5hk9Y.png"
+                                    alt="관통">
+                            </div>
+                            <div class="type_image"><img class="type-image" src="https://i.imgur.com/95BqG32.png"
+                                    alt="타격">
+                            </div>
+                        </div>
+                        <div class="weapon-typevalue">
+                            <div class="weapon_type_check"><input type="checkbox" class="weapon-type1" value="참격"
+                                    name="attr_weapon1_Type"></div>
+                            <div class="weapon_type_check"><input type="checkbox" class="weapon-type1" value="관통"
+                                    name="attr_weapon1_Type"></div>
+                            <div class="weapon_type_check"><input type="checkbox" class="weapon-type1" value="타격"
+                                    name="attr_weapon1_Type"></div>
+                        </div>
+                        <div class="weapon-effect" style="text-align: center; height: 60px;;">
+                            <span class="weaponhead">효과</span>
+                            <span id="weapon-effect" class="weaponbody">
+                                <textarea name="attr_weapon-effect1"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                        <div class="weapon-feature" style="text-align: center; height: 75px;">
+                            <span class="weaponhead">특징</span>
+                            <textarea name="attr_weapon-feature1"
+                                style="width: 240px; height: 60px; resize: none; vertical-align: middle; text-align: left;"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 무기2 -->
+                <div class="weapon_Body" style="text-align: center;">
+                    <div class="weapon_body">
+                        <div class="weapon-name" style="height: 30px;">
+                            <span class="weaponhead">이름</span>
+                            <span id="weapon-name2" class="weaponbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_weapon-name2">
+                            </span>
+                        </div>
+                        <div class="weapon-grade" style="height: 30px;">
+                            <span class="weaponhead">등급</span>
+                            <span id="weapon-grade2" class="weaponbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_weapon-grade2">
+                            </span>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="weaponhead"><span class="weaponhead">
+                                    <select name="attr_weapon_distance2" class="weapon_distance">
+                                        <option value="근거리">근거리</option>
+                                        <option value="원거리">원거리</option></span>
+                                <span class="weaponbody">
+                                    <span><input type="text" style="width: 45px; text-align: center;"
+                                            name="attr_weaponDice2-1"></span>
+                                    <span style="width: 15px; text-align: center;">D</span>
+                                    <span><input type="text" style="width: 45px; text-align: center;"
+                                            name="attr_weaponDice2-2"></span>
+                                    <span style="width: 15px; text-align: center;">+</span>
+                                    <span><input type="text" style="width: 45px; text-align: center;"
+                                            name="attr_weaponDice2-3"></span>
+                                    <span><button type="roll" class="NDice"
+                                            value="&{template:Combat}{{type=@{weapon_distance2}}}{{dice_type=@{weapon2_Type}}}{{name=@{weapon-name2}}}{{dice_value1=[[@{weaponDice2-1}d@{weaponDice2-2}+@{weaponDice2-3}]]}}{{effect=@{weapon-effect2}}}"></button></span>
+                                    <span><button type="roll" class="BDice"
+                                            value="&{template:Combat}{{type=@{weapon_distance2}}}{{dice_type=@{weapon2_Type}}}{{name=@{weapon-name2}}}{{dice_value1=[[@{weaponDice2-1}d@{weaponDice2-2}+@{weaponDice2-3}]]}}{{dice_value2=[[@{weaponDice2-1}d@{weaponDice2-2}+@{weaponDice2-3}]]}}{{effect=@{weapon-effect2}}}"></button></span>
+                                </span>
+                        </div>
+                        <div class="weapon-imagebody">
+                            <div class="type_image"><img class="type-image" src="https://i.imgur.com/CxMfMI8.png"
+                                    alt="참격">
+                            </div>
+                            <div class="type_image"><img class="type-image" src="https://i.imgur.com/7l5hk9Y.png"
+                                    alt="관통">
+                            </div>
+                            <div class="type_image"><img class="type-image" src="https://i.imgur.com/95BqG32.png"
+                                    alt="타격">
+                            </div>
+                        </div>
+                        <div class="weapon-typevalue" style="width: 300px;">
+                            <div class="weapon_type_check"><input type="checkbox" class="weapon-type2" value="참격"
+                                    name="attr_weapon2_Type"></div>
+                            <div class="weapon_type_check"><input type="checkbox" class="weapon-type2" value="관통"
+                                    name="attr_weapon2_Type"></div>
+                            <div class="weapon_type_check"><input type="checkbox" class="weapon-type2" value="타격"
+                                    name="attr_weapon2_Type"></div>
+                        </div>
+                        <div class="weapon-effect" style="text-align: center; height: 60px;;">
+                            <span class="weaponhead">효과</span>
+                            <span id="weapon-effect" class="weaponbody">
+                                <textarea name="attr_weapon-effect2"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                        <div class="weapon-feature" style="text-align: center; height: 75px;">
+                            <span class="weaponhead">특징</span>
+                            <textarea name="attr_weapon-feature2"
+                                style="width: 240px; height: 60px; resize: none; vertical-align: middle; text-align: left;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 의상   -->
+            <div class="armor">
+                <div class="armortitle">
+                    <h4>의상</h4>
+                </div>
+                <div class="armor-Body">
+                    <div class="armor-grade" style="height: 30px;">
+                        <span class="armorhead">등급</span>
+                        <span id="armor-grade2" class="armorbody">
+                            <input type="text" style="text-align: center; width: 240px;" name="attr_armor-grade">
+                        </span>
+                    </div>
+                    <div class="combatDice" style="text-align: center;">
+                        <span class="armorhead">방어</span>
+                        <span class="armorbody">
+                            <span><input type="text" style="width: 45px; text-align: center;"
+                                    name="attr_armorDice1-1"></span>
+                            <span style="width: 15px; text-align: center;">D</span>
+                            <span><input type="text" style="width: 45px; text-align: center;"
+                                    name="attr_armorDice1-2"></span>
+                            <span style="width: 15px; text-align: center;">+</span>
+                            <span><input type="text" style="width: 45px; text-align: center;"
+                                    name="attr_armorDice1-3"></span>
+                            <span><button type="roll" class="NDice"
+                                    value="&{template:Combat}{{type=방어}}{{dice_value1=[[@{armorDice1-1}d@{armorDice1-2}+@{armorDice1-3}]]}}{{effect=@{armor-effect}}}"></button></span>
+                            <span><button type="roll" class="BDice"
+                                    value="&{template:Combat}{{type=방어}}{{dice_value1=[[@{armorDice1-1}d@{armorDice1-2}+@{armorDice1-3}]]}}{{dice_value2=[[@{armorDice1-1}d@{armorDice1-2}+@{armorDice1-3}]]}}{{effect=@{armor-effect}}}"></button></span>
+                        </span>
+                    </div>
+                    <div class="combatDice" style="text-align: center;">
+                        <span class="armorhead">회피</span>
+                        <span class="armorbody">
+                            <span><input type="text" style="width: 45px; text-align: center;"
+                                    name="attr_armorDice2-1"></span>
+                            <span style="width: 15px; text-align: center;">D</span>
+                            <span><input type="text" style="width: 45px; text-align: center;"
+                                    name="attr_armorDice2-2"></span>
+                            <span style="width: 15px; text-align: center;">+</span>
+                            <span><input type="text" style="width: 45px; text-align: center;"
+                                    name="attr_armorDice2-3"></span>
+                            <span><button type="roll" class="NDice"
+                                    value="&{template:Combat}{{type=회피}}{{dice_value1=[[@{armorDice2-1}d@{armorDice2-2}+@{armorDice2-3}]]}}{{effect=@{armor-effect}}}"></button></span>
+                            <span><button type="roll" class="BDice"
+                                    value="&{template:Combat}{{type=회피}}{{dice_value1=[[@{armorDice2-1}d@{armorDice2-2}+@{armorDice2-3}]]}}{{dice_value2=[[@{armorDice2-1}d@{armorDice2-2}+@{armorDice2-3}]]}}{{effect=@{armor-effect}}}"></button></span>
+                        </span>
+                    </div>
+                    <div class="armor-imagebody">
+                        <div class="type_image"><img class="type-image" src="https://i.imgur.com/CxMfMI8.png" alt="참격">
+                        </div>
+                        <div class="type_image"><img class="type-image" src="https://i.imgur.com/7l5hk9Y.png" alt="관통">
+                        </div>
+                        <div class="type_image"><img class="type-image" src="https://i.imgur.com/95BqG32.png" alt="타격">
+                        </div>
+                    </div>
+                    <div class="armor-immunebody">
+                        <span>
+                            <select name="attr_armor-immune1" id="armor-immune1" class="armor-immunevalue">
+                                <option value="취약">취약</option>
+                                <option value="약점">약점</option>
+                                <option value="보통">보통</option>
+                                <option value="견딤">견딤</option>
+                                <option value="내성">내성</option>
+                                <option value="면역">면역</option>
+                            </select>
+                            <select name="attr_armor-immune2" id="armor-immune2" class="armor-immunevalue"
+                                style="background-color: #aaaaaa;">
+                                <option value="취약">취약</option>
+                                <option value="약점">약점</option>
+                                <option value="보통">보통</option>
+                                <option value="견딤">견딤</option>
+                                <option value="내성">내성</option>
+                                <option value="면역">면역</option>
+                            </select>
+                            <select name="attr_armor-immune3" id="armor-immune3" class="armor-immunevalue">
+                                <option value="취약">취약</option>
+                                <option value="약점">약점</option>
+                                <option value="보통">보통</option>
+                                <option value="견딤">견딤</option>
+                                <option value="내성">내성</option>
+                                <option value="면역">면역</option>
+                            </select>
+                            <select name="attr_armor-immune4" id="armor-immune4" class="armor-immunevalue"
+                                style="background-color: #aaaaaa;">
+                                <option value="취약">취약</option>
+                                <option value="약점">약점</option>
+                                <option value="보통">보통</option>
+                                <option value="견딤">견딤</option>
+                                <option value="내성">내성</option>
+                                <option value="면역">면역</option>
+                            </select>
+                            <select name="attr_armor-immune5" id="armor-immune5" class="armor-immunevalue">
+                                <option value="취약">취약</option>
+                                <option value="약점">약점</option>
+                                <option value="보통">보통</option>
+                                <option value="견딤">견딤</option>
+                                <option value="내성">내성</option>
+                                <option value="면역">면역</option>
+                            </select>
+                            <select name="attr_armor-immune6" id="armor-immune6" class="armor-immunevalue"
+                                style="background-color: #aaaaaa;">
+                                <option value="취약">취약</option>
+                                <option value="약점">약점</option>
+                                <option value="보통">보통</option>
+                                <option value="견딤">견딤</option>
+                                <option value="내성">내성</option>
+                                <option value="면역">면역</option>
+                            </select>
+                    </div>
+                    <div class="armor-effect" style="text-align: center; height: 60px;;">
+                        <span class="armorhead">효과</span>
+                        <span id="armor-effect" class="armorbody">
+                            <textarea name="attr_armor-effect"
+                                style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                        </span>
+                    </div>
+                    <div class="armor-feature" style="text-align: center; height: 75px;">
+                        <span class="armorhead">특징</span>
+                        <textarea name="attr_armor-feature"
+                            style="width: 240px; height: 60px; resize: none; vertical-align: middle;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기술(전체) -->
+        <div class="skill_all">
+            <!-- 에고 기술 -->
+            <div class="EGO_skill">
+                <div class="EGO_skilltitle">
+                    <h4>E.G.O Skill</h4>
+                </div>
+                <div class="ego_skill_body">
+                    <div class="EGO_skill1" style="text-align: center;">
+                        <div class="EGOskill-name" style="height: 30px;">
+                            <span class="EGOhead">이름</span>
+                            <span id="EGO-skill1" class="EGObody">
+                                <input type="text" style="text-align: center; width: 240px;"
+                                    name="attr_EGO_skill_name1">
+                            </span>
+                        </div>
+                        <div class="EGO-grade" style="height: 30px;">
+                            <span class="EGOhead">등급</span>
+                            <span id="EGO-grade1" class="EGObody">
+                                <input type="text" style="text-align: center; width: 240px;"
+                                    name="attr_EGO_skill_grade1" value="(@{Character_grade})" disabled="true">
+                            </span>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="EGOhead">
+                                <select name="attr_EGO_skill_type1" class="skill_type">
+                                    <option value="공격">공격</option>
+                                    <option value="방어">방어</option>
+                                    <option value="회피">회피</option>
+                                    <option value="행동">행동</option>
+                                    <option value="광역">광역</option>
+                                </select>
+                            </span>
+                            <span class="EGObody">
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_EGODice1-1"></span>
+                                <span style="width: 15px; text-align: center;">D</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_EGODice1-2"></span>
+                                <span style="width: 15px; text-align: center;">+</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_EGODice1-3"></span>
+                                <span><button type="roll" class="NDice"
+                                        value="&{template:Combat}{{type=@{EGO_skill_type1}}}{{name=@{EGO_skill_name1}}}{{dice_value1=[[@{EGODice1-1}d@{EGODice1-2}+@{EGODice1-3}]]}}{{effect=@{EGO_skill_effect1}}}"></button></span>
+                                <span><button type="roll" class="BDice"
+                                        value="&{template:Combat}{{type=@{EGO_skill_type1}}}{{name=@{EGO_skill_name1}}}{{dice_value1=[[@{EGODice1-1}d@{EGODice1-2}+@{EGODice1-3}]]}}{{type=@{EGO_skill_type1}}}{{name=@{EGO_skill_name1}}}{{dice_value2=[[@{EGODice1-1}d@{EGODice1-2}+@{EGODice1-3}]]}}{{name=@{EGO_skill_name1}}}{{dice_value=[[@{EGODice1-1}d@{EGODice1-2}+@{EGODice1-3}]]}}{{effect=@{EGO_skill_effect1}}}"></button></span>
+                            </span>
+                        </div>
+                        <div class="EGO_skill-effect" style="text-align: center; height: 60px;;">
+                            <span class="EGOhead">효과</span>
+                            <span id="EGO_skill-effect1" class="EGO_effect_body">
+                                <textarea name="attr_EGO_skill_effect1"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="EGO_skill2" style="text-align: center;">
+                        <div class="EGOskil2-name" style="height: 30px;">
+                            <span class="EGOhead">이름</span>
+                            <span id="EGO-skill2" class="EGObody">
+                                <input type="text" style="text-align: center; width: 240px;"
+                                    name="attr_EGO_skill_name2">
+                            </span>
+                        </div>
+                        <div class="EGO-grade" style="height: 30px;">
+                            <span class="EGOhead">등급</span>
+                            <span id="EGO-grade2" class="EGObody">
+                                <input type="text" style="text-align: center; width: 240px;"
+                                    name="attr_EGO_skil2_grade1" value="(@{Character_grade}) " disabled="true">
+                            </span>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="EGOhead">
+                                <select name="attr_EGO_skill_type2" class="skill_type">
+                                    <option value="공격">공격</option>
+                                    <option value="방어">방어</option>
+                                    <option value="회피">회피</option>
+                                    <option value="행동">행동</option>
+                                    <option value="광역">광역</option>
+                                </select>
+                            </span>
+                            <span class="EGObody">
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_EGODice2-1"></span>
+                                <span style="width: 15px; text-align: center;" class="SkillD">D</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_EGODice2-2"></span>
+                                <span style="width: 15px; text-align: center;">+</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_EGODice2-3"></span>
+                                <span><button type="roll" class="NDice"
+                                        value="&{template:Combat}{{type=@{EGO_skill_type2}}}{{name=@{EGO_skill_name2}}}{{dice_value1=[[@{EGODice2-1}d@{EGODice2-2}+@{EGODice2-3}]]}}{{effect=@{EGO_skill_effect2}}}"></button></span>
+                                <span><button type="roll" class="BDice"
+                                        value="&{template:Combat}{{type=@{EGO_skill_type2}}}{{name=@{EGO_skill_name2}}}{{dice_value1=[[@{EGODice2-1}d@{EGODice2-2}+@{EGODice2-3}]]}}{{dice_value2=[[@{EGODice2-1}d@{EGODice2-2}+@{EGODice2-3}]]}}{{effect=@{EGO_skill_effect2}}}"></button></span>
+                            </span>
+                        </div>
+                        <div class="EGO_skill-effect" style="text-align: center; height: 60px;;">
+                            <span class="EGOhead">효과</span>
+                            <span id="EGO_skill-effect2" class="EGO_effect_body">
+                                <textarea name="attr_EGO_skill_effect2"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 기술 -->
+            <div class="skill">
+                <div class="skilltitle">
+                    <h4>Skill</h4>
+                </div>
+                <div class="skill_Body">
+                    <div class="skill1" style="text-align: center;">
+                        <div class="skill-name" style="height: 30px;">
+                            <span class="skillhead">이름</span>
+                            <span id="skill-skill1" class="skillbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_skill_name1">
+                            </span>
+                        </div>
+                        <div class="skill-grade_light">
+                            <div class="skill_grade">등급<input id="skill-grade1" class="skill_grade_value" type="number"
+                                    style="text-align: center; width: 105px;" name="attr_skill_grade1"></span>
+                                <span class="skill_light">빛<input id="skill-light1" class="skill_light_value"
+                                        type="number" style="text-align: center; width: 105px;"
+                                        name="attr_skill_light1">
+                            </div>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="skillhead">
+                                <select name="attr_skill_type1" class="skill_type">
+                                    <option value="공격">공격</option>
+                                    <option value="방어">방어</option>
+                                    <option value="회피">회피</option>
+                                    <option value="행동">행동</option>
+                                    <option value="광역">광역</option>
+                                </select>
+                            </span>
+                            <span class="skillbody">
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice1-1"></span>
+                                <span style="width: 15px; text-align: center;">D</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice1-2"></span>
+                                <span style="width: 15px; text-align: center;">+</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice1-3"></span>
+                                <span><button type="roll" class="NDice"
+                                        value="&{template:Combat}{{type=@{skill_type1}}}{{name=@{skill_name1}}}{{dice_type=@{skill_light1}}}{{dice_value1=[[@{skillDice1-1}d@{skillDice1-2}+@{skillDice1-3}]]}}{{effect=@{skill_effect1}}}"></button></span>
+                                <span><button type="roll" class="BDice"
+                                        value="&{template:Combat}{{type=@{skill_type1}}}{{name=@{skill_name1}}}{{dice_type=@{skill_light1}}}{{dice_value1=[[@{skillDice1-1}d@{skillDice1-2}+@{skillDice1-3}]]}}{{dice_value2=[[@{skillDice1-1}d@{skillDice1-2}+@{skillDice1-3}]]}}{{effect=@{skill_effect1}}}"></button></span>
+                            </span>
+                        </div>
+                        <div class="skill-effect" style="text-align: center; height: 60px;;">
+                            <span class="skillhead">효과</span>
+                            <span id="skill-effect1" class="skill_effect_body">
+                                <textarea name="attr_skill_effect1"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="skill2" style="text-align: center;">
+                        <div class="skill-name" style="height: 30px;">
+                            <span class="skillhead">이름</span>
+                            <span id="skill-skill2" class="skillbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_skill_name2">
+                            </span>
+                        </div>
+                        <div class="skill-grade_light">
+                            <div class="skill_grade">등급<input id="skill-grade2" class="skill_grade_value" type="number"
+                                    style="text-align: center; width: 105px;" name="attr_skill_grade2"></span>
+                                <span class="skill_light">빛<input id="skill-light2" class="skill_light_value"
+                                        type="number" style="text-align: center; width: 105px;"
+                                        name="attr_skill_light2">
+                            </div>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="skillhead">
+                                <select name="attr_skill_type2" class="skill_type">
+                                    <option value="공격">공격</option>
+                                    <option value="방어">방어</option>
+                                    <option value="회피">회피</option>
+                                    <option value="행동">행동</option>
+                                    <option value="광역">광역</option>
+                                </select>
+                            </span>
+                            <span class="skillbody">
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice2-1"></span>
+                                <span style="width: 15px; text-align: center;">D</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice2-2"></span>
+                                <span style="width: 15px; text-align: center;">+</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice2-3"></span>
+                                <span><button type="roll" class="NDice"
+                                        value="&{template:Combat}{{type=@{skill_type2}}}{{name=@{skill_name2}}}{{dice_type=@{skill_light2}}}{{dice_value1=[[@{skillDice2-1}d@{skillDice2-2}+@{skillDice2-3}]]}}{{effect=@{skill_effect2}}}"></button></span>
+                                <span><button type="roll" class="BDice"
+                                        value="&{template:Combat}{{type=@{skill_type2}}}{{name=@{skill_name2}}}{{dice_type=@{skill_light2}}}{{dice_value1=[[@{skillDice2-1}d@{skillDice2-2}+@{skillDice2-3}]]}}{{dice_value2=[[@{skillDice2-1}d@{skillDice2-2}+@{skillDice2-3}]]}}{{effect=@{skill_effect2}}}"></button></span>
+                            </span>
+                        </div>
+                        <div class="skill-effect" style="text-align: center; height: 60px;;">
+                            <span class="skillhead">효과</span>
+                            <span id="skill-effect2" class="skill_effect_body">
+                                <textarea name="attr_skill_effect2"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill_Body">
+                    <div class="skill3" style="text-align: center;">
+                        <div class="skill-name" style="height: 30px;">
+                            <span class="skillhead">이름</span>
+                            <span id="skill-skill3" class="skillbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_skill_name3">
+                            </span>
+                        </div>
+                        <div class="skill-grade_light">
+                            <div class="skill_grade">등급<input id="skill-grade3" class="skill_grade_value" type="number"
+                                    style="text-align: center; width: 105px;" name="attr_skill_grade3"></span>
+                                <span class="skill_light">빛<input id="skill-light3" class="skill_light_value"
+                                        type="number" style="text-align: center; width: 105px;"
+                                        name="attr_skill_light3">
+                            </div>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="skillhead">
+                                <select name="attr_skill_type3" class="skill_type">
+                                    <option value="공격">공격</option>
+                                    <option value="방어">방어</option>
+                                    <option value="회피">회피</option>
+                                    <option value="행동">행동</option>
+                                    <option value="광역">광역</option>
+                                </select>
+                            </span>
+                            <span class="skillbody">
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice3-1"></span>
+                                <span style="width: 15px; text-align: center;">D</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice3-2"></span>
+                                <span style="width: 15px; text-align: center;">+</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice3-3"></span>
+                                <span><button type="roll" class="NDice"
+                                        value="&{template:Combat}{{type=@{skill_type3}}}{{name=@{skill_name3}}}{{dice_type=@{skill_light3}}}{{dice_value1=[[@{skillDice3-1}d@{skillDice3-2}+@{skillDice3-3}]]}}{{effect=@{skill_effect3}}}"></button></span>
+                                <span><button type="roll" class="BDice"
+                                        value="&{template:Combat}{{type=@{skill_type3}}}{{name=@{skill_name3}}}{{dice_type=@{skill_light3}}}{{dice_value1=[[@{skillDice3-1}d@{skillDice3-2}+@{skillDice3-3}]]}}{{dice_value2=[[@{skillDice3-1}d@{skillDice3-2}+@{skillDice3-3}]]}}{{effect=@{skill_effect3}}}"></button></span>
+                            </span>
+                        </div>
+                        <div class="skill-effect" style="text-align: center; height: 60px;;">
+                            <span class="skillhead">효과</span>
+                            <span id="skill-effect3" class="skill_effect_body">
+                                <textarea name="attr_skill_effect3"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="skill4" style="text-align: center;">
+                        <div class="skill-name" style="height: 30px;">
+                            <span class="skillhead">이름</span>
+                            <span id="skill-skill4" class="skillbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_skill_name4">
+                            </span>
+                        </div>
+                        <div class="skill-grade_light">
+                            <div class="skill_grade">등급<input id="skill-grade2" class="skill_grade_value" type="number"
+                                    style="text-align: center; width: 105px;" name="attr_skill_grade4"></span>
+                                <span class="skill_light">빛<input id="skill-light2" class="skill_light_value"
+                                        type="number" style="text-align: center; width: 105px;"
+                                        name="attr_skill_light4">
+                            </div>
+                        </div>
+                        <div class="combatDice" style="text-align: center;">
+                            <span class="skillhead">
+                                <select name="attr_skill_type4" class="skill_type">
+                                    <option value="공격">공격</option>
+                                    <option value="방어">방어</option>
+                                    <option value="회피">회피</option>
+                                    <option value="행동">행동</option>
+                                    <option value="광역">광역</option>
+                                </select>
+                            </span>
+                            <span class="skillbody">
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice4-1"></span>
+                                <span style="width: 15px; text-align: center;">D</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice4-2"></span>
+                                <span style="width: 15px; text-align: center;">+</span>
+                                <span><input type="text" style="width: 45px; text-align: center;"
+                                        name="attr_skillDice4-3"></span>
+                                <span><button type="roll" class="NDice"
+                                        value="&{template:Combat}{{type=@{skill_type4}}}{{name=@{skill_name4}}}{{dice_type=@{skill_light4}}}{{dice_value1=[[@{skillDice4-1}d@{skillDice4-2}+@{skillDice4-3}]]}}{{effect=@{skill_effect4}}}"></button></span>
+                                <span><button type="roll" class="BDice"
+                                        value="&{template:Combat}{{type=@{skill_type4}}}{{name=@{skill_name4}}}{{dice_type=@{skill_light4}}}{{dice_value1=[[@{skillDice4-1}d@{skillDice4-2}+@{skillDice4-3}]]}}{{dice_value2=[[@{skillDice4-1}d@{skillDice4-2}+@{skillDice4-3}]]}}{{effect=@{skill_effect4}}}"></button></span>
+                            </span>
+                        </div>
+                        <div class="skill-effect" style="text-align: center; height: 60px;;">
+                            <span class="skillhead">효과</span>
+                            <span id="skill-effect4" class="skill_effect_body">
+                                <textarea name="attr_skill_effect4"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기타 -->
+        <div class="etc">
+            <!-- 도구 -->
+            <div class="tool">
+                <div class="tooltitle">
+                    <h4>도구</h4>
+                </div>
+                <div class="tool_Body">
+                    <div class="tool1">
+                        <div class="tool-name">
+                            <span class="toolhead">이름</span>
+                            <span id="tool-name1" class="toolbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_tool-name1">
+                            </span>
+                        </div>
+                        <div class="tool-grade">
+                            <span class="toolhead">등급</span>
+                            <span id="tool-grade1" class="toolbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_tool-grade1">
+                            </span>
+                        </div>
+                        <div class="tool_type">
+                            <div class="tool_line">
+                                <div class="tool_line_cell">휴대 가능</div>
+                                <div class="tool_line_cell"><input type="checkbox" class="tool_check"
+                                        name="attr_mobile1"></button></div>
+                            </div>
+                            <div class="tool_line">
+                                <div class="tool_line_cell" id="tool_reuse">재사용 가능</div>
+                                <div class="tool_line_cell"><input type="checkbox" class="tool_check"
+                                        name="attr_reuse1"></button></div>
+                            </div>
+                            <div class="tool_line" id="tool_time">
+                                <div class="C_tool_time"><input class="C_tool_time_number" type="number"
+                                        name="attr_C_tool_time" placeholder="현재" style="width:75px; height: 20px; text-align: center; 
+                                background-color: #c5c5c5; color: black;"></div>
+                                <div class="M_tool_time"><input class="M_tool_time_number" type="number"
+                                        name="attr_M_tool_time" value="3" style="width:75px; height: 20px; text-align: center; 
+                                background-color: #5e5e5e; color: black; font-weight: bolder;"></div>
+                            </div>
+                        </div>
+                        <div class="tool_effect">
+                            <span class="toolhead">효과</span>
+                            <span id="tool_effect1" class="tool_effect_body">
+                                <textarea name="attr_tool_effect1"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="tool2">
+                        <div class="tool-name">
+                            <span class="toolhead">이름</span>
+                            <span id="tool-name2" class="toolbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_tool-name2">
+                            </span>
+                        </div>
+                        <div class="tool-grade">
+                            <span class="toolhead">등급</span>
+                            <span id="tool-grade2" class="toolbody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_tool-grade2">
+                            </span>
+                        </div>
+                        <div class="tool_type">
+                            <div class="tool_line">
+                                <div class="tool_line_cell">휴대 가능</div>
+                                <div class="tool_line_cell"><input type="checkbox" class="tool_check"
+                                        name="attr_mobile2"></button></div>
+                            </div>
+                            <div class="tool_line">
+                                <div class="tool_line_cell" id="tool_reuse">재사용 가능</div>
+                                <div class="tool_line_cell"><input type="checkbox" class="tool_check"
+                                        name="attr_reuse2"></button></div>
+                            </div>
+                            <div class="tool_line" id="tool_time">
+                                <div class="C_tool_time"><input class="C_tool_time_number" type="number"
+                                        name="attr_C_tool_time2" placeholder="현재" style="width:75px; height: 20px; text-align: center; 
+                                background-color: #c5c5c5; color: black;"></div>
+                                <div class="M_tool_time"><input class="M_tool_time_number" type="number"
+                                        name="attr_M_tool_time2" value="3" style="width:75px; height: 20px; text-align: center; 
+                                background-color: #5e5e5e; color: black; font-weight: bolder;"></div>
+                            </div>
+                        </div>
+                        <div class="tool_effect">
+                            <span class="toolhead">효과</span>
+                            <span id="tool_effect2" class="tool_effect_body">
+                                <textarea name="attr_tool_effect2"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 시술 및 특수 장비 -->
+            <div class="procedure_spe-tool">
+                <!-- 시술 -->
+                <div class="procedure">
+                    <div class="proceduretitle">
+                        <h4>시술</h4>
+                    </div>
+                    <div class="procedure_Body">
+                        <div class="procedure-name">
+                            <span class="procedurehead">이름</span>
+                            <span id="procedure-name" class="procedurebody">
+                                <input type="text" style="text-align: center; width: 240px;" name="attr_procedure-name">
+                            </span>
+                        </div>
+                        <div class="procedure-grade">
+                            <span class="procedurehead">등급</span>
+                            <span id="procedure-grade" class="procedurebody">
+                                <input type="text" style="text-align: center; width: 240px;"
+                                    name="attr_procedure-grade">
+                            </span>
+                        </div>
+                        <div class="procedure-type">
+                            <span class="procedurehead">종류</span>
+                            <span id="procedure-type" class="procedurebody">
+                                <select name="attr_procedure-type" id="procedure-type" style="text-align: center;">
+                                    <option value="none"></option>
+                                    <option value="enhance_tatoo">강화 문신</option>
+                                    <option value="enhance_drug">강화 약물</option>
+                                    <option value="enhance_procedure">강화 수술</option>
+                                    <option value="part_prosthetic_body">부분 의체</option>
+                                    <option value="full_prosthetic_body">전신 의체</option>
+                                    <option value="ETC">그 외 기타</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="procedure_effect">
+                            <span class="procedurehead">효과</span>
+                            <span id="procedure_effect" class="procedure_effect_body">
+                                <textarea name="attr_procedure_effect"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle; text-align: center;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 특수장비 -->
+                <div class="Special_tool">
+                    <div class="Special_tooltitle">
+                        <h4>특수 장비</h4>
+                    </div>
+                    <div class="Special_tool_Body">
+                        <div class="Special_tool-name">
+                            <span class="Special_toolhead">이름</span>
+                            <span id="Special_tool-name" class="Special_toolbody">
+                                <input type="text" style="text-align: center; width: 240px;"
+                                    name="attr_Special_tool-name">
+                            </span>
+                        </div>
+                        <div class="Special_tool-grade">
+                            <span class="Special_toolhead">등급</span>
+                            <span id="Special_tool-grade" class="Special_toolbody">
+                                <input type="text" style="text-align: center; width: 240px;"
+                                    name="attr_Special_tool-grade">
+                            </span>
+                        </div>
+                        <div class="Special_tool_type">
+                            <div class="Special_tool_line">
+                                <div class="Special_tool_line_cell">범위</div>
+                                <div class="Special_tool_line_cell">
+                                    <select name="attr_Special_range" id="Special_range" style="text-align: center;">
+                                        <option value="none"></option>
+                                        <option value="0">한 두 명 정도</option>
+                                        <option value="1">거리</option>
+                                        <option value="2">동네</option>
+                                        <option value="3">거주 구역</option>
+                                        <option value="4">둥지</option>
+                                        <option value="5">여러 둥지</option>
+                                        <option value="EX">도시</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="Special_tool_line">
+                                <div class="Special_tool_line_cell" id="Special_dangerous">위험도</div>
+                                <div class="Special_tool_line_cell">
+                                    <select name="attr_Special_dangerous" id="Special_dangerous"
+                                        style="text-align: center;">
+                                        <option value="none"></option>
+                                        <option value="0">뜬 소문</option>
+                                        <option value="1">도시 괴담</option>
+                                        <option value="2">도시 전설</option>
+                                        <option value="3">도시 질병</option>
+                                        <option value="4">도시 악몽</option>
+                                        <option value="5">도시의 별</option>
+                                        <option value="EX">불순물</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="Special_tool_line">
+                                <div class="Special_tool_line_cell" id="Special_tool_last">지속 시간</div>
+                                <div class="Special_tool_line_cell">
+                                    <select name="attr_Special_last" id="Special_last" style="text-align: center;">
+                                        <option value="none"></option>
+                                        <option value="0">잠시</option>
+                                        <option value="1">몇 초</option>
+                                        <option value="2">몇 분</option>
+                                        <option value="3">몇 시간</option>
+                                        <option value="4">몇 일</option>
+                                        <option value="5">몇 주</option>
+                                        <option value="EX">몇 달</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Special_tool_effect">
+                            <span class="Special_toolhead">효과</span>
+                            <span id="Special_tool_effect" class="Special_tool_effect_body">
+                                <textarea name="attr_Special_tool_effect"
+                                    style="width: 240px; height: 45px; resize: none; vertical-align: middle;"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 플레이 -->
+            <div class="Playing">
+                <div class="level_all">
+                    <div class="level_all_title">
+                        <h4>성장</h4>
+                    </div>
+                    <div class="level_body">
+                        <div class="EXP">
+                            <div class="EXP_bar">성장치<input type="number" name="attr_EXP"
+                                    style="text-align: center; width: 240px;"></div>
+                        </div>
+                        <div class="level">
+                            <div class="level_bar">레벨<input type="number" name="attr_level" id="level_value"
+                                    style="text-align: center; width: 240px;" value="floor(@{EXP}/8)" disabled="true">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="status_effect">
+                    <div class="status_effect_title">
+                        <h4>상태 이상</h4>
+                    </div>
+                    <div class="status_effect_body">
+                        <table>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">화상</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Burn"></td>
+                                <td class="status_effect_sort">출혈</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Bleed"></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">마비</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Paralysis"></td>
+                                <td class="status_effect_sort">취약</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Fragile"></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">보호</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_protection"></td>
+                                <td class="status_effect_sort">흐트러짐 보호</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Stagger_protection"></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">힘</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Strength"></td>
+                                <td class="status_effect_sort">허약</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Feeble"></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">인내</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Endurance"></td>
+                                <td class="status_effect_sort">무장 해제</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Disarm"></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">신속</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Haste"></td>
+                                <td class="status_effect_sort">속박</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Bind"></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">연기</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Smoke"></td>
+                                <td class="status_effect_sort">흐트러짐</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Stagger "></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort">전투 불가</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Out_of_battle"></td>
+                                <td class="status_effect_sort">행동 불가</td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_Out_of_action"></td>
+                            </tr>
+                            <tr class="status_effect_line">
+                                <td class="status_effect_sort"><input type="text"
+                                        style="width: 100px; text-align: center;" name="attr_etc_sort_1"></td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_etc_value_1"></td>
+                                <td class="status_effect_sort"><input type="text"
+                                        style="width: 100px; text-align: center;" name="attr_etc_sort_2"></td>
+                                <td class="status_effect_vlaue"><input type="text"
+                                        style="width: 50px; text-align: center;" name="attr_etc_value_2"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 프로필2 -->
+        <div class="profile2">
+            <div class="profile2_title">
+                <h4>인적 사항</h4>
+            </div>
+            <div class="profile2_Body">
+                <div class="profile2_body1">
+                    <div class="profile2_body_small" id="appearance">
+                        <div class="profile2head">외형</div>
+                        <div class="profile2body"><textarea name="attr_appearance"
+                                style="width: 270px; height: 90px; resize: none;"></textarea></div>
+                    </div>
+                    <div class="profile2_body_small" id="surround">
+                        <div class="profile2head">관련 인물</div>
+                        <div class="profile2body"><textarea name="attr_surround"
+                                style="width: 270px; height: 90px; resize: none"></textarea></div>
+                    </div>
+                </div>
+                <div class="profile2_body2">
+                    <div class="profile2_body_small" id="backstory">
+                        <div class="profile2head">배경 및 성격</div>
+                        <div class="profile2body"><textarea name="attr_backstory"
+                                style="width: 270px; height: 90px; resize: none"></textarea></div>
+                    </div>
+                    <div class="profile2_body_small" id="trace">
+                        <div class="profile2head">행적</div>
+                        <div class="profile2body"><textarea name="attr_trace"
+                                style="width: 270px; height: 90px; resize: none; text-align: center;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile2_body3">
+                    <div class="profile2_body_small" id="property">
+                        <div class="profile2head">자산</div>
+                        <div class="profile2body"><textarea name="attr_property"
+                                style="width: 270px; height: 90px; resize: none"></textarea></div>
+                    </div>
+                    <div class="profile2_body_small" id="special_thing">
+                        <div class="profile2head">특이 사항</div>
+                        <div class="profile2body"><textarea name="attr_special_thing"
+                                style="width: 270px; height: 90px; resize: none"></textarea></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- 템플릿 -->
+<rolltemplate class="sheet-rolltemplate-Combat">
+    <div class="sheet-template_Body" style="width: 240px; height: 360px; 
+    background-image: url(https://i.imgur.com/TjGTQ7o.png); background-size: 240px 360px; overflow: hidden;">
+        <div class="sheet-container" style="width: 150px; height: 250px; margin-left: 45px; margin-top: 55px;">
+            <div class="sheet-template_type"
+                style="width: 150px; height: 20px; color: #fee2b0; text-align: center; padding-top: 10px;">{{type}}
+            </div>
+            <div class="sheet-template_name" style="width: 150px; height: 20px; color: #fee2b0; text-align: center;">
+                {{name}}</div>
+            <div class="sheet-template_dice_type"
+                style="width: 150px; height: 20px; color: #fee2b0; text-align: center;">{{dice_type}}</div>
+            <div class="sheet-template_dice" style="width: 150px; height: 60px; color: #000000; text-align: center;">
+                {{dice_value1}}</div>
+            <div class="sheet-template_dice" style="width: 150px; height: 60px; color: #000000; text-align: center;">
+                {{dice_value2}}</div>
+            <div class="sheet-template_effect" style="width: 150px; height: 60px; color: #fee2b0; text-align: center;">
+                {{effect}}</div>
+        </div>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-Challenge">
+    <div class="sheet-template_Body" style="width: 240px; height: 360px; 
+    background-image: url(https://i.imgur.com/v3Q88Sz.png); background-size: 240px 360px; overflow: hidden;">
+        <div class="sheet-container"
+            style="width: 150px; height: 250px; margin-left: 45px; margin-top: 55px; overflow: hidden;">
+            <div class="sheet-template_name"
+                style="width: 150px; height: 20px; color: #fee2b0; text-align: center; font-size: 18px; font-family: 'HeirofLightBold'; margin-top: 12px;">
+                {{name}}</div>
+            <div class="sheet-template_dice"
+                style="width: 150px; height: 60px; color: #000000; text-align: center; font-size: 20px; margin-top: 100px;">
+                {{dice_value1}}</div>
+            <div class="sheet-template_dice"
+                style="width: 150px; height: 60px; color: #000000; text-align: center; font-size: 20px;">
+                {{dice_value2}}</div>
+        </div>
+    </div>
+</rolltemplate>
